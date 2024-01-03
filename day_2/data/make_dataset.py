@@ -3,6 +3,24 @@ import torchvision
 from torch import nn
 import matplotlib.pyplot as plt
 
+def load_data(batch_size=64,shuffle=True):
+    """Return train and test dataloaders for MNIST."""
+    train_images =  torch.load('data/processed/train_images.pt')
+    train_targets = torch.load('data/processed/train_target.pt')
+
+    test_images = torch.load('data/processed/test_images.pt')
+    test_targets = torch.load('data/processed/test_target.pt')     
+
+    # use torch.utils.data.TensorDataset to wrap the data
+    train = torch.utils.data.TensorDataset(train_images, train_targets)
+    test = torch.utils.data.TensorDataset(test_images, test_targets)   
+
+    # create dataloader
+    train = torch.utils.data.DataLoader(train, batch_size=batch_size, shuffle=shuffle)
+    test = torch.utils.data.DataLoader(test, batch_size=batch_size, shuffle=shuffle)        
+    
+    return train, test
+
 if __name__ == '__main__':
     # Get the data and process it
     train_images, train_targets = [], []    
