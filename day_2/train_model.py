@@ -19,7 +19,7 @@ def train(lr, epochs):
     """Train a model on MNIST."""
     print("Training day and night")
     print(lr)
-        
+
     model = MyAwesomeModel()
     model.train()
     train_set, _ = load_data()
@@ -45,7 +45,7 @@ def train(lr, epochs):
 
     torch.save(model, f"models/trained_models/model_{lr}_{epochs}.pt")
 
-    #visualize the loss
+    # visualize the loss
     plt.plot(loss_hist)
     plt.xlabel("Epochs")
     plt.ylabel("Cross Entropy Loss")
@@ -56,8 +56,9 @@ def train(lr, epochs):
     plt.savefig(f"reports/figures/loss_{lr}_{epochs}.png")
     plt.close()
 
+
 cli.add_command(train)
 
 
-if __name__ == "__main__":    
+if __name__ == "__main__":
     cli()

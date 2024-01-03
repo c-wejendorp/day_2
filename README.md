@@ -2,6 +2,8 @@
 
 Day2 of MLOps
 
+halløj halløj
+
 ## Project structure
 
 The directory structure of the project looks like this:
