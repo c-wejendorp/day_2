@@ -1,5 +1,4 @@
 from torch import nn
-from collections import OrderedDict
 
 
 class MyAwesomeModel(nn.Module):

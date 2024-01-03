@@ -1,9 +1,11 @@
-import click
-import torch
-from models.model import MyAwesomeModel
-import matplotlib.pyplot as plt
-from data.make_dataset import load_data
 import os
+
+import click
+import matplotlib.pyplot as plt
+import torch
+
+from data.make_dataset import load_data
+from models.model import MyAwesomeModel
 
 
 @click.group()
