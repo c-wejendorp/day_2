@@ -24,7 +24,7 @@ if __name__ == "__main__":
     # Get the data and process it
     train_images, train_targets = [], []
 
-    for i in range(6):
+    for i in range(10):
         train_images.append(torch.load("data/raw/train_images_{}.pt".format(i)))
         train_targets.append(torch.load("data/raw/train_target_{}.pt".format(i)))
 
