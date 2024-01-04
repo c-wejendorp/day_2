@@ -28,5 +28,5 @@ RUN pip install . --no-cache-dir
 # Here the flag -u here makes sure that any output from our script e.g. any print(...) statements gets redirected to our terminal. 
 # ENTRYPOINT ["python", "-u", "day_2/train_model.py","train"]
 ENTRYPOINT ["python", "-u", "day_2/train_model.py"]
-
+CMD ["train"]
 
