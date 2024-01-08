@@ -1,13 +1,16 @@
 import torch
+import os
 
 
-def load_data(batch_size=64, shuffle=True):
+def load_data(batch_size=64, shuffle=True, path="data/processed/"):
     """Return train and test dataloaders for MNIST."""
-    train_images = torch.load("data/processed/train_images.pt")
-    train_targets = torch.load("data/processed/train_target.pt")
+    # load the data
+    print("some shit")
+    train_images = torch.load(os.path.join(path,"train_images.pt"))
+    train_targets = torch.load(os.path.join(path,"train_target.pt"))
 
-    test_images = torch.load("data/processed/test_images.pt")
-    test_targets = torch.load("data/processed/test_target.pt")
+    test_images = torch.load(os.path.join(path,"test_images.pt"))
+    test_targets = torch.load(os.path.join(path,"test_target.pt")) 
 
     # use torch.utils.data.TensorDataset to wrap the data
     train = torch.utils.data.TensorDataset(train_images, train_targets)
