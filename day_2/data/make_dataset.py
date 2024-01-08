@@ -2,10 +2,9 @@ import torch
 import os
 
 
-def load_data(batch_size=64, shuffle=True, path="data/processed/"):
+def load_data(batch_size=64, shuffle=True, path="data/processed/",somenewargument=True):
     """Return train and test dataloaders for MNIST."""
     # load the data
-    print("some shit")
     train_images = torch.load(os.path.join(path,"train_images.pt"))
     train_targets = torch.load(os.path.join(path,"train_target.pt"))
 
